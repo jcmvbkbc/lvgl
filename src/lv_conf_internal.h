@@ -3292,6 +3292,13 @@
             #define LV_LINUX_FBDEV_BUFFER_SIZE   60
         #endif
     #endif
+    #ifndef LV_LINUX_FBDEV_MMAP
+        #ifdef CONFIG_LV_LINUX_FBDEV_MMAP
+            #define LV_LINUX_FBDEV_MMAP CONFIG_LV_LINUX_FBDEV_MMAP
+        #else
+            #define LV_LINUX_FBDEV_MMAP          1
+        #endif
+    #endif
 #endif
 
 /*Use Nuttx to open window and handle touchscreen*/
